@@ -1,0 +1,92 @@
+body{
+    background-image:url(../images/bg1.jpg);
+}
+
+header{
+    height: 100px;
+}
+#logo{
+    /* 方法一、簡單但有時候元素多會被干擾，其他的會跟著一起移動 */
+    /* margin: 20px 0 0 40px; */
+    /* 方法二、relative相對定位，以自身的位置去做基準浮起來，正值向內、負直向外 */ 
+    position: relative;
+    top: 20px;
+    left: 40px;
+}
+
+
+/* 補充說明 */
+/* banner大小跟著body走 */
+#banner{
+    /* border自帶block跟width:100% */
+    border: 2px solid red;
+    /* display: block; */
+    /* width: 80%; */
+}
+
+/* img大小跟著banner走 */
+#banner img{
+    width: 100%;
+}
+
+main{
+    /* height固定高，如果內容超出不會跟著變高，而會直接超出去。 */
+    /* min-height最小高，最小會有XX高度，但內容超過會跟著變高，通常用這個。 */
+    /* height: 300px; */
+    min-height: 300px ;
+}
+
+footer{
+    background-color: rgba(88, 129, 69, 0.5);
+    padding: 30px 0;
+}
+
+#footerList{
+    /* 橫向排列 */
+    display: flex;
+}
+.footerItem{
+    /* border: 1px solid red; */
+    /* flex: 1總和佔比均分 */
+    flex: 1;
+    /* 文本置中 */
+    text-align: center;
+    /* 框線-右邊：粗細 樣式虛線 顏色 */
+    /* solid 直線
+    dashed 虛線
+    dotted 點線
+    double 雙線 */
+    border-right: 2px dashed rgb(255, 255, 255);
+    /* 欄位間距加長讓虛線變長，border跟著欄位高度走 */
+    padding: 30px 0 30px 0;
+    margin-bottom: 20px;
+}
+.item2{
+    /* 特別要調整其中一欄的寬度的話 */
+    flex: 2;
+}
+/* 針對footerItem的最後一欄 不要有虛線 */
+.footerItem:last-of-type{
+border: none;
+}
+
+
+.footerItem h2{
+    font-size: 1.2em;
+    color: blue;
+    margin: 0 0 8px 0;
+    letter-spacing: 1em;
+}
+
+.footerItem p{
+    font-size: 0.95em;
+    color: blueviolet;
+    margin: 0 0 5px 0;
+}
+
+#copyright{
+    background-color: #fff;
+    text-align: center;
+    /* 因a、spen、smail為行內元素（寬度無法指定，依內容而定）轉black用區塊把寬度打開置中才有用 */
+    display: block;
+}
