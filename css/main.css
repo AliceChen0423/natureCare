@@ -57,14 +57,16 @@ footer{
     dotted 點線
     double 雙線 */
     border-right: 2px dashed rgb(255, 255, 255);
-    /* 欄位間距加長讓虛線變長，border跟著欄位高度走 */
+    /* 欄位間距jjjj
+    加長讓虛線變長，border跟著欄位高度走 */
     padding: 30px 0 30px 0;
     margin-bottom: 20px;
 }
 .item2{
     /* 特別要調整其中一欄的寬度的話 */
     flex: 2;
-}
+}uuuuuu
+
 /* 針對footerItem的最後一欄 不要有虛線 */
 .footerItem:last-of-type{
 border: none;
