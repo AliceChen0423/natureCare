@@ -1,9 +1,12 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');Ｚ */
 body{
+    /* font-family: 'Noto Sans TC', sans-serif; */
     background-image:url(../images/bg1.jpg);
 }
 
 header{
-    height: 100px;
+    height: 90px;
+    position: relative;
 }
 #logo{
     /* 方法一、簡單但有時候元素多會被干擾，其他的會跟著一起移動 */
@@ -11,7 +14,36 @@ header{
     /* 方法二、relative相對定位，以自身的位置去做基準浮起來，正值向內、負直向外 */ 
     position: relative;
     top: 20px;
-    left: 40px;
+    left: 20px;
+}
+
+#memNav{
+    /* 絕對定位 跟著父層relative走 */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#memNav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#memNav ul li{
+    float: left;
+    margin: 0 8px;
+    /* li給按鈕、ａ調內容 */
+    background-color: #fff;
+    width: 100px;
+    text-align: center;
+}
+
+#memNav ul a{
+    text-decoration: none;
+    color: rgb(4, 80, 4);
+    border: 1px solid red;
+    display: block;
 }
 
 
@@ -19,7 +51,7 @@ header{
 /* banner大小跟著body走 */
 #banner{
     /* border自帶block跟width:100% */
-    border: 2px solid red;
+    /* border: 2px solid red; */
     /* display: block; */
     /* width: 80%; */
 }
