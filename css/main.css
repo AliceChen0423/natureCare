@@ -1,7 +1,8 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');Ｚ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
 body{
-    /* font-family: 'Noto Sans TC', sans-serif; */
     background-image:url(../images/bg1.jpg);
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 header{
@@ -22,12 +23,15 @@ header{
     position: absolute;
     top: 0;
     right: 0;
+    margin: 8px;
 }
 
 #memNav ul{
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0 20px;
+    background-color: rgb(133, 43, 43);
+    border-radius: 20px 0 20px 0;
 }
 
 #memNav ul li{
@@ -44,6 +48,7 @@ header{
     color: rgb(4, 80, 4);
     border: 1px solid red;
     display: block;
+    font-size: 0.95em;
 }
 
 
@@ -97,7 +102,7 @@ footer{
 .item2{
     /* 特別要調整其中一欄的寬度的話 */
     flex: 2;
-}uuuuuu
+}
 
 /* 針對footerItem的最後一欄 不要有虛線 */
 .footerItem:last-of-type{
@@ -123,4 +128,10 @@ border: none;
     text-align: center;
     /* 因a、spen、smail為行內元素（寬度無法指定，依內容而定）轉black用區塊把寬度打開置中才有用 */
     display: block;
+}
+
+.clear::after{
+    content: "";
+    display: block;
+    clear: both;
 }
