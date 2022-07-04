@@ -18,6 +18,16 @@ header{
     left: 20px;
 }
 
+#nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav ul a{
+    text-decoration: none;
+}
+
 #memNav{
     /* 絕對定位 跟著父層relative走 */
     position: absolute;
@@ -27,8 +37,6 @@ header{
 }
 
 #memNav ul{
-    list-style-type: none;
-    margin: 0;
     padding: 0 20px;
     background-color: rgb(133, 43, 43);
     border-radius: 20px 0 20px 0;
@@ -44,7 +52,6 @@ header{
 }
 
 #memNav ul a{
-    text-decoration: none;
     color: rgb(4, 80, 4);
     border: 1px solid red;
     display: block;
