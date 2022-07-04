@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;400;500;600;900&display=swap');
+
+body{
+    background-image: url(../images/bg1.jpg);
+    font-family: 'Noto Sans TC', sans-serif;
+    
+}
+
+
+
+header{
+    height: 90px;
+    position: relative;
+}
+#logo{
+    position: relative;
+    top:20px;
+    left:20px;
+ 
+}
+/* 後代選取器 */
+nav ul{ 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul a{
+    text-decoration: none;
+}
+
+#mainNav{
+    position: absolute;
+    right:0;
+    top: 60px;
+    /* border:5px solid red; */
+    width: calc(100% - 300px);
+}
+
+/* 子代選取器 */
+#mainNav>ul{ 
+    display: flex;
+}
+
+#mainNav>ul>li{
+    /* border:1px solid yellow; */
+    flex:1;
+    
+}
+
+#mainNav>ul>li:hover ul{
+    display: block;
+}
+
+
+#mainNav ul li a{
+    /* border:1px solid red; */
+    text-align: center;
+    display: block;
+    color: rgb(11, 68, 11);
+}
+
+#mainNav>ul>li>a{
+    padding-bottom: 2px;
+    /* border:1px solid red; */
+}
+#mainNav>ul>li>a:hover{
+    background-image: radial-gradient(at center bottom,rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0) 65%);
+}
+
+#mainNav ul ul{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding:12px 0;
+    display: none;
+    /* border:1px solid yellow; */
+}
+
+#mainNav ul ul li{
+    margin:  0 12px 8px 12px;
+    border-bottom:1px dashed rgb(17, 61, 17);
+    padding-bottom: 5px;
+    
+    /* border:1px solid red; */
+}
+
+
+#mainNav>ul>li>a{
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 600;
+}
+
+#mainNav ul ul li a{
+    font-size: 0.95em;
+    font-weight: 400;
+}
+
+
+
+#memNav{
+    position: absolute;
+    top:0;
+    right:0;
+    margin:8px;
+}
+#memNav ul{
+    padding: 0 20px;
+    background-color: rgba(80, 124, 54, 0.582);
+    border-radius: 12px;
+
+}
+
+#memNav ul li{
+    float: left;
+    margin: 0 8px;
+    
+}
+
+#memNav ul a{
+    color:white;
+    font-size: 0.9em;
+    font-weight: 100;
+}
+
+
+
+
+#banner{
+
+}
+#banner img{
+    width: 100%;
+}
+
+main{
+    min-height: 300px;
+    /* background-image: linear-gradient(to right,red,white 10%,yellow 90%,orange); */
+    /* background-image: radial-gradient(circle at 50% 50%,red,yellow,green,blue); */
+}
+
+footer{
+    font-family: 'Noto Serif TC', serif;
+    background-color: rgba(88, 129, 69, 0.5);
+    padding: 30px 0;
+}
+
+
+#footerList{
+    display: flex;
+    margin-bottom: 30px;
+}
+.footerItem{
+    /* border:1px solid red; */
+    flex:1;   /*  總和佔比  */
+    text-align:center;
+    border-right:1px dashed rgb(33, 71, 33);
+    padding: 30px 0;
+}
+.footerItem:last-of-type{
+    border:none;
+}
+
+
+
+.footerItem h2{
+    font-size: 1.2em;
+    color: rgb(13, 34, 13);
+    margin: 0 0 8px 0;
+    letter-spacing: 0.2em;
+}
+
+.footerItem p{
+    font-size: 0.95em;
+    color: rgb(10, 44, 10);
+    margin:0 0 5px 0;
+    font-weight: 100;
+}
+
+#copyright{
+    text-align: center;
+    /* background-color: yellow; */
+    display: block;
+
+}
+
+
+.clr::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+
+
+
+
+
