@@ -73,16 +73,23 @@ nav ul a {
 }
 
 #mainNav ul ul {
-    background-color: rgba(255, 255, 255, 0.599);
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 12px 20px;
     display: none;
 }
 
 #mainNav ul ul li {
     margin-bottom: 8px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0);
+    padding-bottom: 8px;
+}
+
+#mainNav ul ul li:hover {
+    margin-bottom: 8px;
     border-bottom: 1px dashed rgb(3, 78, 18);
     padding-bottom: 8px;
 }
+
 
 #mainNav ul ul li a {
     font-family: 'Noto Sans TC', sans-serif;
