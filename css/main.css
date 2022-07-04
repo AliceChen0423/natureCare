@@ -33,7 +33,7 @@ nav ul a {
 #mainNav {
     position: absolute;
     right: 0;
-    top: 62px;
+    top: 59px;
     /* border: 5px solid red; */
     /* 不同單位的計算方式calc ＊減號前後一定要空格 */
     /* 扣掉前面的logo寬 */
@@ -65,6 +65,7 @@ nav ul a {
 #mainNav>ul>li>a {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
+    padding: bottom 3px; ;
 }
 
 #mainNav>ul>li>a:hover {
