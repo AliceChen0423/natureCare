@@ -1,34 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 
-body{
-    background-image:url(../images/bg1.jpg);
+body {
+    background-image: url(../images/bg1.jpg);
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-header{
+header {
     height: 90px;
     position: relative;
 }
-#logo{
+
+#logo {
     /* 方法一、簡單但有時候元素多會被干擾，其他的會跟著一起移動 */
     /* margin: 20px 0 0 40px; */
-    /* 方法二、relative相對定位，以自身的位置去做基準浮起來，正值向內、負直向外 */ 
+    /* 方法二、relative相對定位，以自身的位置去做基準浮起來，正值向內、負直向外 */
     position: relative;
     top: 20px;
     left: 20px;
 }
 
-#nav ul{
+/* 後代選取器 */
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-#nav ul a{
+nav ul a {
     text-decoration: none;
 }
 
-#memNav{
+#mainNav {
+    position: absolute;
+    right: 0;
+    top: 62px;
+    /* border: 5px solid red; */
+    /* 不同單位的計算方式calc ＊減號前後一定要空格 */
+    /* 扣掉前面的logo寬 */
+    width: calc(100% - 300px);
+}
+
+/* 子代選取器 */
+#mainNav>ul {
+    display: flex;
+}
+
+#mainNav>ul>li {
+    /* border: 1px solid yellow; */
+    flex: 1;
+}
+
+#mainNav>ul>li:hover ul {
+    display: block;
+}
+
+
+#mainNav ul li a {
+    text-align: center;
+    /* border: 1px solid rgb(201, 97, 18); */
+    display: block;
+    color: rgb(1, 92, 71);
+}
+
+#mainNav>ul>li>a {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 700;
+}
+
+#mainNav>ul>li>a:hover {
+    background-image: radial-gradient(at center bottom, rgb(255, 255, 255,0.6),rgba(255, 255, 255, 0) 65%);
+}
+
+#mainNav ul ul {
+    background-color: rgba(255, 255, 255, 0.599);
+    padding: 12px 20px;
+    display: none;
+}
+
+#mainNav ul ul li {
+    margin-bottom: 8px;
+    border-bottom: 1px dashed rgb(3, 78, 18);
+    padding-bottom: 8px;
+}
+
+#mainNav ul ul li a {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 100;
+}
+
+#memNav {
     /* 絕對定位 跟著父層relative走 */
     position: absolute;
     top: 0;
@@ -36,13 +96,13 @@ header{
     margin: 8px;
 }
 
-#memNav ul{
+#memNav ul {
     padding: 0 20px;
     background-color: rgb(133, 43, 43);
     border-radius: 20px 0 20px 0;
 }
 
-#memNav ul li{
+#memNav ul li {
     float: left;
     margin: 0 8px;
     /* li給按鈕、ａ調內容 */
@@ -51,7 +111,7 @@ header{
     text-align: center;
 }
 
-#memNav ul a{
+#memNav ul a {
     color: rgb(4, 80, 4);
     border: 1px solid red;
     display: block;
@@ -61,7 +121,7 @@ header{
 
 /* 補充說明 */
 /* banner大小跟著body走 */
-#banner{
+#banner {
     /* border自帶block跟width:100% */
     /* border: 2px solid red; */
     /* display: block; */
@@ -69,27 +129,40 @@ header{
 }
 
 /* img大小跟著banner走 */
-#banner img{
+#banner img {
     width: 100%;
 }
 
-main{
+main {
     /* height固定高，如果內容超出不會跟著變高，而會直接超出去。 */
     /* min-height最小高，最小會有XX高度，但內容超過會跟著變高，通常用這個。 */
     /* height: 300px; */
-    min-height: 300px ;
+    min-height: 300px;
+    /* 線性漸層 往右邊 均分*/
+    /* background-image: linear-gradient(to right,red,white,yellow,orange); */
+    /* 線性漸層 往右邊 顏色後面可以設定位置*/
+    /* background-image: linear-gradient(to right,red,white 10%,yellow 90%,orange); */
+    /* 線性漸層 45度角 */
+    /* background-image: linear-gradient(45deg,red,white,yellow,orange); */
+    /* 環狀漸層 */
+    /* background-image: radial-gradient(circle,red,white,yellow,orange); */
+    /* 環狀漸層 顏色後面可以設定位置*/
+    /* background-image: radial-gradient(circle,red,white,yellow 90%,orange); */
+    /* 環狀漸層 中心點的位置在正下方*/
+    /* background-image: radial-gradient(circle at center bottom,red,white,yellow,orange); */
 }
 
-footer{
+footer {
     background-color: rgba(88, 129, 69, 0.5);
     padding: 30px 0;
 }
 
-#footerList{
+#footerList {
     /* 橫向排列 */
     display: flex;
 }
-.footerItem{
+
+.footerItem {
     /* border: 1px solid red; */
     /* flex: 1總和佔比均分 */
     flex: 1;
@@ -106,38 +179,39 @@ footer{
     padding: 30px 0 30px 0;
     margin-bottom: 20px;
 }
-.item2{
+
+.item2 {
     /* 特別要調整其中一欄的寬度的話 */
     flex: 2;
 }
 
 /* 針對footerItem的最後一欄 不要有虛線 */
-.footerItem:last-of-type{
-border: none;
+.footerItem:last-of-type {
+    border: none;
 }
 
 
-.footerItem h2{
+.footerItem h2 {
     font-size: 1.2em;
     color: blue;
     margin: 0 0 8px 0;
     letter-spacing: 1em;
 }
 
-.footerItem p{
+.footerItem p {
     font-size: 0.95em;
     color: blueviolet;
     margin: 0 0 5px 0;
 }
 
-#copyright{
+#copyright {
     background-color: #fff;
     text-align: center;
     /* 因a、spen、smail為行內元素（寬度無法指定，依內容而定）轉black用區塊把寬度打開置中才有用 */
     display: block;
 }
 
-.clear::after{
+.clear::after {
     content: "";
     display: block;
     clear: both;
