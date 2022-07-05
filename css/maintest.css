@@ -83,7 +83,7 @@ nav ul a {
     display: inline-block;
     /* border: 1px solid red; */
     /* 用background-image就不需要溢出隱藏;用content則不行 */
-    /* overflow: hidden; */
+    overflow: hidden;
     position: relative;
     top: 2px;
     /* 方法一、通常用這個 */
@@ -113,29 +113,76 @@ nav ul a {
     background-position: -80px 0;
 }
 
-#mainNav>ul>li:nth-of-type(1)>a:hover::before{
+#mainNav>ul>li>a>span::before{
+    /* content: url(//images/mainIcon.png); */
+    content: "";
+    background-image: url(../images/mainIcon.png);
+    /* 想要顯示多少的寬高 */
+    width: 16px;
+    height: 16px;
+    /* 可以放在行內又可以控制寬高的型態inline-block，但margin上下就沒有效要改用top */
+    display: inline-block;
+    /* border: 1px solid red; */
+    /* 用background-image就不需要溢出隱藏;用content則不行 */
+    /* overflow: hidden; */
+    position: relative;
+    top: 2px;
+    /* 方法一、通常用這個 */
+    margin-right: 4px;
+    /* 方法二、 */
+    /* left: -4px; */
+    transition: 0.5s;
+    background-position: 32px 16px;
+}
+
+#mainNav>ul>li:nth-of-type(1)>a>span::before{
     background-position: 0 -16px;
 }
 
-#mainNav>ul>li:nth-of-type(2)>a:hover::before{
+#mainNav>ul>li:nth-of-type(2)>a>span::before{
     background-position: -16px -16px;
 }
 
-#mainNav>ul>li:nth-of-type(3)>a:hover::before{
+#mainNav>ul>li:nth-of-type(3)>a>span::before{
     background-position: -32px -16px;
 }
 
-#mainNav>ul>li:nth-of-type(4)>a:hover::before{
+#mainNav>ul>li:nth-of-type(4)>a>span::before{
     background-position: -48px -16px;
 }
 
-#mainNav>ul>li:nth-of-type(5)>a:hover::before{
+#mainNav>ul>li:nth-of-type(5)>a>span::before{
     background-position: -64px -16px;
 }
 
-#mainNav>ul>li:nth-of-type(6)>a:hover::before{
+#mainNav>ul>li:nth-of-type(6)>a>span::before{
     background-position: -80px -16px;
 }
+
+#mainNav>ul>li:nth-of-type(1)>a>span:hover::before{
+    background-position: 0 -16px;
+}
+
+#mainNav>ul>li:nth-of-type(2)>a>span:hover::before{
+    background-position: -16px -16px;
+}
+
+#mainNav>ul>li:nth-of-type(3)>a>span:hover::before{
+    background-position: -32px -16px;
+}
+
+#mainNav>ul>li:nth-of-type(4)>a>span:hover::before{
+    background-position: -48px -16px;
+}
+
+#mainNav>ul>li:nth-of-type(5)>a>span:hover::before{
+    background-position: -64px -16px;
+}
+
+#mainNav>ul>li:nth-of-type(6)>a>span:hover::before{
+    background-position: -80px -16px;
+}
+
 
 #mainNav ul ul {
     background-color: rgba(255, 255, 255, 0.6);

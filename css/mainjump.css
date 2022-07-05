@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@200&display=swap');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-image: url(../images/bg1.jpg);
+}
+
+header {
+    height: 90px;
+    position: relative;
+}
+
+#logo {
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+#nav-meber {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+nav>ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav>ul>li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #025159;
+    text-decoration: none;
+}
+
+#nav-meber ul {
+    /* list-style-type: none; */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* display: flex; */
+    background-color: #c5d99a;
+    border-radius: 10px;
+}
+
+#nav-meber li a {
+    /* color: #025159; */
+    /* text-decoration: none; */
+    display: block;
+    padding: 0 10px 0 20px;
+    /* 因為a是in-line，所以要display: block; */
+    /* margin: 10px; */
+    position: relative;
+    overflow: hidden;
+}
+
+#nav-meber ul a i:last-of-type {
+    color: #DBF227;
+    position: absolute;
+    left: 0;
+    top: 25px;
+}
+
+#nav-meber ul a i {
+    position: absolute;
+    left: 0;
+    transition: 0.3s;
+}
+
+#nav-meber ul a i:first-of-type {
+    top: 4px;
+}
+
+#nav-meber li a:hover i:last-of-type {
+    top: 4px;
+}
+
+
+
+.clr::before {
+    /* content: "123123"; */
+}
+
+#nav-meber>ul>li {
+    /* margin: 0 10px; */
+    /* li a都能設定，為了方便之後分辨，li設定按鈕 a設定文字 */
+
+}
+
+
+
+#nav-main>ul {
+    position: absolute;
+    top: 65px;
+    right: 10px;
+    width: calc(100% - 300px);
+
+}
+
+#nav-main>ul>li {
+    /* margin: 0 10px; */
+    flex: 1;
+}
+
+#nav-main ul ul {
+    padding: 3px 0;
+    list-style-type: none;
+    background-color: #9fc1318b;
+    /* border-radius:0 0 10px 10px ; */
+    display: none;
+
+}
+
+#nav-main ul ul li {
+    margin: 3px 0;
+    border-top: 1px dashed #c5d99a00;
+    border-bottom: 1px dashed #c5d99a00;
+}
+
+#nav-main ul li a {
+    text-align: center;
+    color: #c5d99a;
+    text-decoration: none;
+    display: block;
+    padding: 0 10px;
+}
+
+#nav-main>ul>li>a {
+    color: #025159;
+    font-weight: 800;
+    padding-bottom: 2px;
+    /* color: #000; */
+}
+
+/* #nav-main>ul>li>a::before {
+    content: "";
+    background-image: url(/images/mainIcon.png);
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    overflow: hidden;
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
+
+#nav-main>ul>li:nth-child(2)>a::before {
+    background-position: -16px 0;
+}
+
+#nav-main>ul>li:nth-child(3)>a::before {
+    background-position: -32px 0;
+}
+
+#nav-main>ul>li:nth-child(4)>a::before {
+    background-position: -48px 0;
+}
+
+#nav-main>ul>li:nth-child(5)>a::before {
+    background-position: -64px 0;
+}
+
+#nav-main>ul>li:nth-child(6)>a::before {
+    background-position: -80px 0;
+}
+
+#nav-main>ul>li:hover a::before {
+    background-position-y: -16px;
+    transition: 0.5s;
+} */
+#nav-main>ul>li>a {
+    position: relative;
+}
+
+#box {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    /* border: 1px solid red; */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    overflow: hidden;
+}
+
+#icon {
+    /* content: ""; */
+    background-image: url(/images/mainIcon.png);
+    display: block;
+    height: 16px;
+    width: 16px;
+    /* overflow: hidden; */
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(-50%);
+    left: 30px; */
+    /* margin-right: 4px; */
+    /* border: 1px solid red; */
+}
+
+#icon2 {
+    /* content: ""; */
+    background-image: url(/images/mainIcon.png);
+    background-position-y: -16px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    /* overflow: hidden; */
+    position: absolute;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    left: 16px;
+    /* margin-right: 4px; */
+    /* border: 1px solid yellow; */
+}
+
+
+#nav-main>ul>li:nth-child(2) div {
+    background-position-x: -16px;
+}
+
+#nav-main>ul>li:nth-child(3) div {
+    background-position-x: -32px;
+}
+
+#nav-main>ul>li:nth-child(4) div {
+    background-position-x: -48px;
+}
+
+#nav-main>ul>li:nth-child(5) div {
+    background-position-x: -64px;
+}
+
+#nav-main>ul>li:nth-child(6) div {
+    background-position-x: -80px;
+}
+
+
+#nav-main>ul>li:hover #box>div {
+    /* background-position-y: -16px; */
+    transform: translateX(-16px);
+    transition: 0.5s;
+}
+
+/* #nav-main>ul>li:hover #icon {
+    background-position-y: -16px;
+    transform: translate(-16px, -50%);
+    transition: 0.5s;
+} */
+
+
+
+#nav-main>ul>li>a:hover {
+    background-image: radial-gradient(at center bottom, #d6d58e9a, #d6d58e00 70%);
+}
+
+#nav-main>ul>li:hover ul {
+    display: block;
+}
+
+#nav-main>ul>li>ul>li:hover {
+    border-top: 1px dashed #c5d99a;
+    border-bottom: 1px dashed #c5d99a;
+}
+
+#banner img {
+    width: 100%;
+}
+
+main {
+    display: flex;
+    min-height: 300px;
+}
+
+.left {
+    flex: 1;
+    /* background-color: #E2F2A7; */
+
+    background-image: radial-gradient(circle at right top, #005C53, #9FC131, #DBF227, #D6D58E);
+    min-height: 300px;
+}
+
+.right {
+    /* background-color: #c1d9d9; */
+    background-image: linear-gradient(180deg, #9FC131 50%, #D6D58E 50.1%);
+    flex: 2;
+    min-height: 300px;
+}
+
+.right img {
+    width: 100%;
+}
+
+#box1 {
+    flex: 1;
+    display: flex;
+    margin: 15px;
+}
+
+#box2 {
+    flex: 1;
+    display: flex;
+    margin: 15px;
+}
+
+.right>div>div {
+    width: 50%;
+    padding: 10px;
+    /* display: flex; */
+}
+
+footer {
+    /* font-family: 'Noto Serif TC', serif; */
+    background-color: #c5d99a8a;
+    padding: 20px 0;
+    min-height: 300px;
+}
+
+#footerlist {
+
+    display: flex;
+    margin-bottom: 20px;
+
+}
+
+#footerlist h2 {
+    font-weight: bold;
+}
+
+.footeritem {
+    flex: 1;
+    text-align: center;
+    padding: 30px 0;
+    position: relative;
+}
+
+.item2 {
+    /* 因為剛好是中間 所以我設even 偶數 */
+    flex: 2;
+    border-left: 1px dashed #025159;
+    border-right: 1px dashed #025159;
+}
+
+.footeritem h2 {
+    color: #025159;
+    font-size: 1.5em;
+    margin: 0 0 8px 0;
+    letter-spacing: 2px;
+}
+
+.footeritem h2 i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 170px;
+    transform: translate(-50%, -50%);
+    color: #e2f2a798;
+    z-index: -1;
+}
+
+.footeritem p {
+    color: #025959;
+    font-size: 1em;
+    margin: 0 0 5px 0;
+}
+
+#copyright {
+    display: block;
+    text-align: center;
+    color: #025159;
+    font-size: 0.8em;
+    /* background-color: #c1d9d9; */
+    /* margin: 10px 0 0 0; */
+    /* 要設每個元素間的距離的話 最好要有一至性 像是都設在上方元素來隔開之類的
+    這邊 上方的#footerlist射了margin-bottom: 20px; 所以就不再設
+    */
+}
