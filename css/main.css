@@ -78,7 +78,20 @@ nav ul a {
     display: none;
 }
 
+/* 方法一、內距扣掉分隔線的粗細 */
 #mainNav ul ul li {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+#mainNav ul ul li:hover {
+    margin-bottom: 8px;
+    border-bottom: 1px dashed rgb(3, 78, 18);
+    padding-bottom: 7px;
+}
+
+/* 方法二、分隔線用成透明 */
+/* #mainNav ul ul li {
     margin-bottom: 8px;
     border-bottom: 1px dashed rgba(255, 255, 255, 0);
     padding-bottom: 8px;
@@ -88,8 +101,7 @@ nav ul a {
     margin-bottom: 8px;
     border-bottom: 1px dashed rgb(3, 78, 18);
     padding-bottom: 8px;
-}
-
+} */
 
 #mainNav ul ul li a {
     font-family: 'Noto Sans TC', sans-serif;
@@ -186,6 +198,7 @@ footer {
     加長讓虛線變長，border跟著欄位高度走 */
     padding: 30px 0 30px 0;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .item2 {
@@ -204,6 +217,22 @@ footer {
     color: blue;
     margin: 0 0 8px 0;
     letter-spacing: 1em;
+}
+
+/* 更改icon style */
+.footerItem h2 i{
+    font-size: 120px;
+    color: white;
+    /* 置中 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* border: 1px solid red; */
+    transform: translate(-50%,-50%);
+    /* 透明 */
+    opacity: 0.5;
+    /* 上下層級 下一層 */
+    z-index: -1;
 }
 
 .footerItem p {
