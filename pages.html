@@ -17,20 +17,24 @@
                 'position':'relative',
                 'top':200,
                 'left':0
-            })
+                // 先隱藏選單
+            }).hide()
 
             $('#mainNav>ul>li').hover(function(){
-                $(this).children('ul').animate({'top':0},1000);
-            }),(function(){
-                $(this).children('ul').animate({'top':200},1000);
+                // 滑入後 秀出透明且只執行最後一次動作 動畫往上移且不透明執行一秒
+                $(this).children('ul').show().css({'opacity':0}).stop()
+                       .animate({'top':0,'opacity':1},1000);
+            },function(){
+                // 離開後 只執行一次 動畫移回去且變回透明執行一秒 執行玩動作後隱藏
+                $(this).children('ul').stop()
+                       .animate({'top':200,'opacity':0},1000,function(){
+                           $(this).hide();
+                       });
 
             })
 
 
         })
-
-
-
     </script>
 </head>
 
