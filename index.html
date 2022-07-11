@@ -24,18 +24,39 @@
                 mainNavEff();
             });
 
-            // 如果js的字出不來時，就讓字直接css出來壓在圖片上
-            $('.caItem').css({'position':'relative'});
+            // 用js把字浮在圖片上方，若js出不來時降級讓字用原本css的方式呈現（字在圖片下方）
+            $('.caItem').css({
+                'position':'relative',
+                // 文字卡超出去的部分隱藏
+                'overflow':'hidden'
+              });
             $('.caItem p').css({
                 'position':'absolute',
-                'bottom':0,
-                'left':0,
+                'left':5,
                 'background-color':'rgab(0,0,0,0,5)',
                 'color':'white',
                 'padding':10,
                 'margin':0,
                 'foze-weight':100
-            });
+            }).each(function(){
+                $(this).css({'bottom':-$(this).innerHeight()});
+            })
+
+            // height() 內容高
+            // innerHeight() 內容高+padding
+            // outerHeight() 內容高+padding+border
+            // outerHeight(true) 內容高+padding+border+margin
+
+
+            // 移到圖片上時字滑上去 移出再退回去
+            $('.caItem').hover(function(){
+                // 抓到高度
+                // alert($(this).children('p').height());
+                $(this).children('p').stop().animate({'bottom':0},1000,'easeOutQuart');
+            },function(){
+                var pH=$(this).children('p').innerHeight();
+                $(this).children('p').stop().animate({'bottom':-pH},1000,'easeOutBounce');
+            })
 
         })
     </script>
