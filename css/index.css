@@ -1,0 +1,85 @@
+main{
+    display: flex;
+    margin: 12px 0;
+}
+
+#news{
+    background-color: rgb(255, 255, 255,0.3);
+    flex: 0 0 calc(30% - 60px);
+    margin: 0 10px;
+    padding: 20px;
+}
+
+#news ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#news ul li{
+    border-bottom: 1px dashed rgb(18, 53, 18);
+    margin-bottom: 30px;
+    padding: 0 5px 8px 85px;
+    color: rgb(18, 53, 18);
+    font-size: 0.95em;
+    position: relative;
+}
+
+#news ul li time{
+    /* margin-right: 15px; */
+    /* border: 1px solid red;
+    background-color: yellow; */
+    position: absolute;
+    top: 0;
+    left: 5px;
+}
+
+.hot::before{
+    content: "Hot";
+    background-color: red;
+    color: white;
+    font-size: 8px;
+    padding: 0 6px;
+    /* border-radius: 5px; */
+    /* 作法一、直接定位 */
+    /* position: relative;
+    top: -6px; */
+    /* 作法二、變形:translate位移 scale縮小 rotate旋轉 */
+    display: inline-block;
+    transform: translate(2px,-5px) scale(0.9) rotate(-10deg);
+}
+.promo::before{
+    content: "促銷";
+    background-color: yellow;
+    color: red;
+    font-size: 5px;
+    padding: 0 6px;
+    /* border-radius: 5px; */
+    /* 作法一、直接定位 */
+    /* position: relative;
+    top: -6px; */
+    /* 作法二、變形:scale縮小 rotate旋轉 */
+    display: inline-block;
+    transform: scale(0.9) rotate(-10deg);
+}
+
+
+
+#ca{
+    /* background-color: cyan; */
+    flex: 7;
+
+    display: flex;
+    /* 超出100%的部分允不允許折行（換行）：允許 */
+    flex-wrap: wrap;
+}
+
+.caItem{
+    flex: 0 0 calc(50% - 20px );
+    background-color: rgb(255, 255, 255,0.3);
+    margin: 0 10px 10px 0;
+}
+
+.caItem img{
+    width: 100%;
+}
