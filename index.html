@@ -24,6 +24,19 @@
                 mainNavEff();
             });
 
+            // 如果js的字出不來時，就讓字直接css出來壓在圖片上
+            $('.caItem').css({'position':'relative'});
+            $('.caItem p').css({
+                'position':'absolute',
+                'bottom':0,
+                'left':0,
+                'background-color':'rgab(0,0,0,0,5)',
+                'color':'white',
+                'padding':10,
+                'margin':0,
+                'foze-weight':100
+            });
+
         })
     </script>
 </head>
@@ -67,19 +80,16 @@
                 <img src="images/caSoap.jpg" alt="">
                 <p>富含甘油的手工皂，在清潔的同時對皮膚產生保濕滋潤的效果，洗後乾淨不黏膩，皮膚觸感柔滑，不緊繃乾燥，呈現油水平衡的最佳膚質。</p>
             </div>
-        <div id="ca">
             <div class="caItem">
                 <h2>草本精油</h2>
                 <img src="images/caOil.jpg" alt="">
                 <p>堅持純天然原料，經過蒸餾或壓榨萃取出的精華，不添加礦物油、不添加人工色素、不添加香料，感受最自然、最純粹的精油！</p>
             </div>
-        <div id="ca">
             <div class="caItem">
                 <h2>手作課程</h2>
                 <img src="images/caDiy.jpg" alt="">
                 <p>想一窺手工皂的製作過程嗎？想親手作出最適合自己使用的手工皂嗎？從最適合入門的冷凝皂到各式保養功效手工皂及變化萬千的藝術皂，歡迎團體自行組班預約。</p>
             </div>
-        <div id="ca">
             <div class="caItem">
                 <h2>服務項目</h2>
                 <img src="images/caService.jpg" alt="">

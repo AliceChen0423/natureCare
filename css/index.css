@@ -23,6 +23,7 @@ main{
     color: rgb(18, 53, 18);
     font-size: 0.95em;
     position: relative;
+    text-align: justify;
 }
 
 #news ul li time{
@@ -75,11 +76,26 @@ main{
 }
 
 .caItem{
-    flex: 0 0 calc(50% - 20px );
+    flex: 0 0 calc(50% - 30px );
     background-color: rgb(255, 255, 255,0.3);
     margin: 0 10px 10px 0;
+    padding: 10px;
+}
+
+.caItem h2{
+    font-family: 'Noto Serif TC',serif;
+    font-size: 1.3em;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.2em;
 }
 
 .caItem img{
     width: 100%;
+}
+
+.caItem p{
+    letter-spacing: 0.1em;
+    line-height: 1.3em;
+    /* 左右切齊平均分配 */
+    text-align: justify;
 }
