@@ -9,7 +9,7 @@ function mainNavEff() {
         // 若螢幕大於600時執行
         if(window.outerWidth>600){
             // 選單不管怎樣都出來
-            $('#menuBtn').hide();
+            $('#menuBtn').hide().removeClass();
             $('#mainNav').show();
             $('#mainNav ul ul').css({
                 'position': 'relative',
