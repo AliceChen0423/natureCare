@@ -102,3 +102,36 @@ main{
     text-align: justify;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
+@media(max-width:600px){
+
+    main{
+        /* 改為直式呈現 */
+        display: block;
+    }
+
+    #news{
+        margin-bottom: 10px;
+    }
+
+    #ca{
+        margin-left: 10px;
+        display: block;
+    }
+}
+
+@media (min-width:601px) and (max-width:960px){
+    /* 讓日期在字的左邊 */
+    #news ul li{
+        padding: 25px 0 0 0;
+    }
+}
+
+@media (min-width:1367px){
+    #news{
+        flex: 0 0 calc(20% - 60px);
+    }
+    .caItem{
+        flex: 1;
+    }
+}

@@ -58,6 +58,13 @@
                 $(this).children('p').stop().animate({'bottom':-pH},1000,'easeOutBounce');
             })
 
+            // 根據視窗.調整大小（任何縮放都不會有問題可以正常運作）
+            $(window).resize(function(){
+                $('caItem p').each(function(){
+                    $(this.css({'bottom':-$(this).innerHeight}))
+                })
+            })
+
         })
     </script>
 </head>
