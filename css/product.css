@@ -1,16 +1,16 @@
-/* 內容文字 */
-main{
+/* 整個內容區塊 */
+main {
     display: flex;
 }
 
 /* 側邊選單 */
-#productMenu{
+#productMenu {
     width: 162px;
     margin: 0 10px;
 }
 
 /* 側邊選單 標題字 */
-#productMenu>ul>li>a{
+#productMenu>ul>li>a {
     background-image: url(../images/productMenuBg.png);
     display: block;
     height: 40px;
@@ -23,18 +23,18 @@ main{
 }
 
 /* 側邊選單 內容區塊 */
-#productMenu ul ul{
+#productMenu ul ul {
     /* 建議這裡不要用margin處理（搭配js會有問題：打開選單時會跳一下） */
-    padding: 10px 0 30px 0;
+    padding: 10px 0 10px 0;
 }
 
-/* 側邊選單 內容個別 */
-#productMenu ul ul li{
+/* 側邊選單 內容區塊 個別內容 */
+#productMenu ul ul li {
     margin-bottom: 12px;
 }
 
-/* 側邊選單 內容字 */
-#productMenu ul ul li a{
+/* 側邊選單 內容區塊 個別內容 連結 */
+#productMenu ul ul li a {
     border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
     display: block;
     text-align: center;
@@ -43,8 +43,8 @@ main{
     padding-bottom: 5px;
 }
 
-/* 內容區塊 */
-#productList{
+/* 主要內容 */
+#productList {
     /* background-color: yellow; */
     flex: 0 0 calc(100% - 182px);
     display: flex;
@@ -52,26 +52,69 @@ main{
     flex-wrap: wrap;
 }
 
-.productItem{
-    /* 圖片大小 */
-    flex: 0 0 calc(33.3% - 30px);
+/* 內容個別項目 */
+.productItem {
+    /* 圖片均分:擴張佔比 壓縮佔比 基準寬(佔視窗比例） */
+    flex: 0 0 calc(25% - 30px);
     margin: 0 10px 10px 0;
     padding: 10px;
+    transition: 0.5s;
+}
+
+/* 內容個別項目 滑入 */
+.productItem:hover {
     background-color: rgba(255, 255, 255, 0.315);
 }
 
-/* 圖片 */
-.productItem img{
+/* 內容個別項目 圖片 */
+.productItem img {
     /* 均分 */
     width: 100%;
 }
 
-.productItem p:nth-of-type(1)::before{
-    content: "說明";
+/* 內容個別項目 文字最前面 */
+.productItem p::before {
     background-color: rgb(68, 90, 68);
     color: white;
     border-radius: 30px;
     padding: 0 12px;
     font-size: 10px;
     margin-right: 10px;
+}
+
+/* 內容個別項目 文字第一段的最前面 */
+.productItem p:nth-of-type(1)::before {
+    content: "說明";
+}
+
+/* 內容個別項目 文字第二段的最前面 */
+.productItem p:nth-of-type(2)::before {
+    content: "成分";
+}
+
+
+/* 媒體查詢 視窗到600以下 */
+@media (max-width:600px) {
+    /* 側邊選單 消失 */
+    .productMenu {
+        /* display: none; */
+    }
+
+    /* 主要內容 */
+    .productList {
+        flex: 1;
+    }
+    
+    /* 內容個別項目 佔視窗均分比例  */
+    .productItem {
+        flex: 0 0 calc(100% - 30px);
+    }
+}
+
+/* 媒體查詢 視窗在601~960之間 */
+@media (min-width:601px) and (max-width:960px) {
+    /* 內容個別項目 佔視窗均分比例  */
+    .productItem {
+        flex: 0 0 calc(33.3% - 30px);
+    }
 }
