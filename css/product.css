@@ -1,0 +1,77 @@
+/* 內容文字 */
+main{
+    display: flex;
+}
+
+/* 側邊選單 */
+#productMenu{
+    width: 162px;
+    margin: 0 10px;
+}
+
+/* 側邊選單 標題字 */
+#productMenu>ul>li>a{
+    background-image: url(../images/productMenuBg.png);
+    display: block;
+    height: 40px;
+    color: white;
+    text-align: center;
+    line-height: 36px;
+    /* border: 1px solid red; */
+    /* 字元間距 */
+    letter-spacing: 0.2em;
+}
+
+/* 側邊選單 內容區塊 */
+#productMenu ul ul{
+    /* 建議這裡不要用margin處理（搭配js會有問題：打開選單時會跳一下） */
+    padding: 10px 0 30px 0;
+}
+
+/* 側邊選單 內容個別 */
+#productMenu ul ul li{
+    margin-bottom: 12px;
+}
+
+/* 側邊選單 內容字 */
+#productMenu ul ul li a{
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+    display: block;
+    text-align: center;
+    color: rgb(24, 66, 24);
+    margin: 0 12px;
+    padding-bottom: 5px;
+}
+
+/* 內容區塊 */
+#productList{
+    /* background-color: yellow; */
+    flex: 0 0 calc(100% - 182px);
+    display: flex;
+    /* 換行 */
+    flex-wrap: wrap;
+}
+
+.productItem{
+    /* 圖片大小 */
+    flex: 0 0 calc(33.3% - 30px);
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.315);
+}
+
+/* 圖片 */
+.productItem img{
+    /* 均分 */
+    width: 100%;
+}
+
+.productItem p:nth-of-type(1)::before{
+    content: "說明";
+    background-color: rgb(68, 90, 68);
+    color: white;
+    border-radius: 30px;
+    padding: 0 12px;
+    font-size: 10px;
+    margin-right: 10px;
+}
