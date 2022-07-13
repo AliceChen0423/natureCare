@@ -1,15 +1,15 @@
 function mainNavEff() {
 
-    // 自動重整
-    $(window).resize(function(){
+    function setMenu(){
         // off註銷事件
         $('#mainNav>ul>li').off('mouseenter mouseleave');
         $('#mainNav>ul>li>a').off('click');
+        $('#menuBtn').removeClass('closeBtn');
 
         // 若螢幕大於600時執行
-        if(window.outerWidth>600){
+        if(!window.matchMedia('(max-width:600px)').matches){
             // 選單不管怎樣都出來
-            $('#menuBtn').hide().removeClass();
+            $('#menuBtn').hide();
             $('#mainNav').show();
             $('#mainNav ul ul').css({
                 'position': 'relative',
@@ -44,9 +44,23 @@ function mainNavEff() {
                 $(this).next().stop().slideToggle();
             })
         }
+    }
+
+    // 螢幕寬度=現在的螢幕寬度
+    var winWidth=window.outerWidth;
+    // 先抓螢幕寬度
+    // alert(windowWidth)
+
+    // 自動重整
+    $(window).resize(function(){
+        if(winWidth!=window.outerWidth){
+            setMenu();
+            winWidth.window=outerWidth;
+        }
     })
 
-    $(window).resize();
+    // $(window).resize();
+    setMenu();
 
     $('#menuBtn').click(function(){
         // 下拉式選單
