@@ -50,10 +50,10 @@
                 },
                 success:function(jData){
                     // alert('ok');
-                    console.log(jData);
+                    // console.log(jData);
 
                     //物件.屬性(陣列[第幾個值])
-                    console.log(jData.product)
+                    // console.log(jData.product)
 
                     // console.log(jData.product.soap)
                     // console.log(jData.product.soap[2])
@@ -62,9 +62,8 @@
                     var product=jData.product.soap;
 
                     var item='';
-
                     for(var i=0;i<product.length;i++){
-                        item+='<div class="productItem"><img src="imgSoap/thum/'+product[i].photo+'"><h3>'+product[i].name+'</h3><p>'+product[1].desc+'</p><p>'+product[i].ingre+'</p><div>';
+                        item+='<div class="productItem"><div class="imgWrap"><img src="imgSoap/thum/'+product[i].photo+'"></div><h3>'+product[i].name+'</h3><p>'+product[1].desc+'</p><p>'+product[i].ingre+'</p></div>';
 
                             $('#productList').html(item);
                     }
