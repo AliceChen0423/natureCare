@@ -9,6 +9,8 @@ body {
 header {
     height: 90px;
     position: relative;
+    /* 浮在最上面 */
+    z-index: 999;
 }
 
 #logo {
