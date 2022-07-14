@@ -1,18 +1,22 @@
+/* google Fonts 下載字型 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
 
+/* 整個網頁設定 */
 body {
     background-image: url(../images/bg1.jpg);
     font-family: 'Noto Sans TC', sans-serif;
     padding: calc(100% - 50);
 }
 
+/* 刊頭 */
 header {
-    height: 90px;
+    height: 90x;
     position: relative;
     /* 浮在最上面 */
-    z-index: 999;
+    z-index: 99999;
 }
 
+/* LOGO */
 #logo {
     /* 方法一、簡單但有時候元素多會被干擾，其他的會跟著一起移動 */
     /* margin: 20px 0 0 40px; */
@@ -22,17 +26,22 @@ header {
     left: 20px;
 }
 
+/* 功能icon＋功能表 */
 /* 後代選取器 */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    /* border: 1px solid red; */
 }
 
+/* 功能icon＋功能表 字 */
 nav ul a {
     text-decoration: none;
+    /* border: 1px solid red; */
 }
 
+/* 按鈕區塊 */
 #menuBtn{
     /* border: 1px solid white; */
     position: absolute;
@@ -44,29 +53,34 @@ nav ul a {
     display: block;
 }
 
+/* 按鈕 內容 */
 #menuBtn div{
     background-color: white;
     height: 5px;
     margin: 8px;
-    transition: .5s;
+    transition: 3.5s;
 }
 
+/* 關閉按鈕 上線（左叉叉） */
 #menuBtn.closeBtn div:nth-of-type(1){
-    /* background-color: red; */
+    background-color: red;
     transform: translate(0,13px) rotate(405deg);
 }
 
+/* 按鈕 中線 */
 #menuBtn.closeBtn div:nth-of-type(2){
     /* background-color: red; */
     /* 縮放 */
     transform: scaleX(0);
 }
 
+/* 關閉按鈕 下線（右叉叉） */
 #menuBtn.closeBtn div:nth-of-type(3){
     /* background-color: red; */
     transform: translate(0,-13px) rotate(-405deg);
 }
 
+/* 功能表 */
 #mainNav {
     position: absolute;
     right: 0;
@@ -77,21 +91,28 @@ nav ul a {
     width: calc(100% - 300px);
 }
 
+/* 功能表 */
 /* 子代選取器 */
 #mainNav>ul {
     display: flex;
+    /* border: 1px solid red; */
 }
 
+/* 功能表 每個主題＋內容 */
 #mainNav>ul>li {
     /* border: 1px solid yellow; */
     flex: 1;
 }
 
+/* 功能表 每個主題＋內容：滑入 子選單 */
 #mainNav>ul>li:hover ul {
-    /* display: block; */
+    display: block;
+    /* border: 1px solid rgb(201, 97, 18); */
+
 }
 
 
+/* 功能表 每個主題＋內容 */
 #mainNav ul li a {
     text-align: center;
     /* border: 1px solid rgb(201, 97, 18); */
@@ -219,8 +240,8 @@ nav ul a {
 
 #memNav ul {
     padding: 0 20px;
-    background-color: rgb(133, 43, 43);
-    border-radius: 20px 0 20px 0;
+    /* background-color: #abbf90; */
+    /* border-radius:10px 10px 10px 10px; */
 }
 
 #memNav ul li {
