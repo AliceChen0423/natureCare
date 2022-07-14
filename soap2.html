@@ -29,6 +29,34 @@
                 productMenuEFF(1,1);
             });
 
+            // $.ajax({
+            //     url:'載入對象',
+            //     type:'載入方法(get)',
+            //     dataType:'取得的資料型態',
+            //     error:function(){
+            //         '載入失敗'
+            //     },
+            //     success:function(){
+            //         '載入完成(取得資料)'
+            //     }
+            // })
+
+            $.ajax({
+                url:'json/soap.json',
+                type:'get',
+                dataType:'json',
+                error:function(){
+                    alert('err');
+                },
+                success:function(jData){
+                    // alert('ok');
+                    console.log(jData);
+
+                    //物件.屬性
+                    console.log(jData.product)
+                }
+            })
+
         })
     </script>
 </head>
