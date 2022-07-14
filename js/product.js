@@ -5,4 +5,6 @@ function productMenuEFF(){
                 $('#productMenu>ul>li>a').click(function(){
                     $(this).next().stop().slideToggle();
                 })
+
+                $('#productMenu ul ul').eq(1).slideDown
 }
