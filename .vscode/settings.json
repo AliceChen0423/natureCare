@@ -1,0 +1,6 @@
+{
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.confirmDelete": false,
+    "files.autoSave": "afterDelay",
+    "liveServer.settings.donotVerifyTags": true,
+}

@@ -43,6 +43,17 @@ main {
     padding-bottom: 5px;
 }
 
+/* 側邊選單 內容區塊 個別內容 連結的前面 */
+#productMenu ul ul li a.nowPage::before {
+    content: "";
+    border: 6px solid transparent;
+    border-left-color: white;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    margin-left: -15px;
+}
+
 /* 主要內容 */
 #productList {
     /* background-color: yellow; */
