@@ -9,5 +9,5 @@ function productMenuEFF(page,item){
 
                 $('#productMenu ul ul').eq(page).slideDown()
                 // 給箭頭
-                                       .children('li').eq(item).children('a').addClass('nowPage');
+                                        .children('li').eq(item).children('a').addClass('nowPage');
 }
