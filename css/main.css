@@ -26,7 +26,7 @@ header {
     left: 20px;
 }
 
-/* 功能icon＋功能表 */
+/* 子選單＋主選單 */
 /* 後代選取器 */
 nav ul {
     list-style-type: none;
@@ -63,7 +63,7 @@ nav ul a {
 
 /* 關閉按鈕 上線（左叉叉） */
 #menuBtn.closeBtn div:nth-of-type(1){
-    background-color: red;
+    /* background-color: red; */
     transform: translate(0,13px) rotate(405deg);
 }
 
@@ -91,14 +91,14 @@ nav ul a {
     width: calc(100% - 300px);
 }
 
-/* 功能表 */
+/* 功能表大框 */
 /* 子代選取器 */
 #mainNav>ul {
     display: flex;
     /* border: 1px solid red; */
 }
 
-/* 功能表 每個主題＋內容 */
+/* 功能表 每個選單 */
 #mainNav>ul>li {
     /* border: 1px solid yellow; */
     flex: 1;
@@ -111,8 +111,7 @@ nav ul a {
 
 }
 
-
-/* 功能表 每個主題＋內容 */
+/* 功能表 文字 */
 #mainNav ul li a {
     text-align: center;
     /* border: 1px solid rgb(201, 97, 18); */
@@ -120,10 +119,12 @@ nav ul a {
     color: rgb(1, 92, 71);
 }
 
+/* 功能表 每個主題＋內容 */
 #mainNav>ul>li>a {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
     padding: bottom 3px; ;
+    /* border: 1px solid rgb(201, 97, 18); */
 }
 
 #mainNav>ul>li>a:hover {
