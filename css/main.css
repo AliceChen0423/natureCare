@@ -104,7 +104,7 @@ nav ul a {
     flex: 1;
 }
 
-/* 主選單 每個主選單＋選項：滑入 下拉選單 */
+/* 主選單 每個主選單：滑入 下拉選單 */
 #mainNav>ul>li:hover ul {
     display: block;
     /* border: 1px solid rgb(201, 97, 18); */
@@ -119,7 +119,7 @@ nav ul a {
     color: rgb(0, 69, 53);
 }
 
-/* 主選單 每個主題＋內容 */
+/* 主選單 每個主選單 文字 */
 #mainNav>ul>li>a {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
@@ -127,9 +127,11 @@ nav ul a {
     /* border: 1px solid rgb(201, 97, 18); */
 }
 
+/* 主選單 每個主選單 文字：滑入 發光  */
 #mainNav>ul>li>a:hover {
     background-image: radial-gradient(at center bottom, rgb(255, 255, 255,0.6),rgba(255, 255, 255, 0) 65%);
 }
+
 
 #mainNav>ul>li>a::before{
     /* content: url(//images/mainIcon.png); */

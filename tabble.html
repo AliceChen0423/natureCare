@@ -5,9 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table{
+            width: 500px;
+            border: 5px solid green;
+            border-spacing: 30px 10px; /*左右距離 上下距離*/
+            border-collapse: collapse; /*疊合模式 無空隙（border-spacing會失效）*/
+        }
+        table th{
+            background-color: green;
+            color: white;
+        }
+        table td{
+            border: 1px solid green;
+        }
+    </style>
 </head>
 <body>
-    <table border="1">
+    <table>
         <!-- 表格標題 -->
         <caption>title</caption>
         <thead>
@@ -25,18 +40,18 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+                <!-- rowspan 列 表格合併的屬性 佔3格 -->
+                <td rowspan="3">x</td>
             </tr>
             <tr>
                 <td>3</td>
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
+
             </tr>
             <tr>
                 <td>4</td>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -45,8 +60,8 @@
         <tfoot>
             <tr>
                 <td>foot</td>
-                <!-- colspan 標格合併的屬性 佔4格 -->
-                <td colspan="4"></td>
+                <!-- colspan 欄 表格合併的屬性 佔4格 -->
+                <td colspan="4">y</td>
             </tr>
         </tfoot>
     </table>
