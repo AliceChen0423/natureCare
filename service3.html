@@ -65,11 +65,19 @@
                 padding: 5px 5px 5px 50px; /*內距*/
                 position: relative; /*定位父曾*/
             }
+            /* 從最後面開始算 第2個開始做 */
+            .ts2 td:nth-last-of-type(n+2){
+                border-bottom: 1px dashed rgb(40, 92, 40);
+            }
             .ts2 td::before{
                 content: attr(data-label); /*帶文字*/
                 position: absolute; /*定位子層*/
-                top: 5px; /*定位*/
-                left: 5px;
+                top: 5px; /*定位上面*/
+                left: 5px; /*定位左邊*/
+            }
+            /* 補上空格\00a0（用中文全形空格也行），讓沒有字的列可以正常在欄位內 */
+            .ts2 td:empty::after{
+                content: "\00a0";
             }
         }
         /* 螢幕最小到601px */

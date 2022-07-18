@@ -27,15 +27,13 @@ header {
 }
 
 /* 子選單＋主選單 */
-/* 後代選取器 */
-nav ul {
+nav ul { /*後代選取器*/
     list-style-type: none;
     margin: 0;
     padding: 0;
     /* border: 1px solid red; */
 }
-
-/* 功能icon＋功能表 字 */
+/* 子選單＋主選單 字 */
 nav ul a {
     text-decoration: none;
     /* border: 1px solid red; */
@@ -52,7 +50,6 @@ nav ul a {
     height: 45px;
     display: block;
 }
-
 /* 按鈕 內容 */
 #menuBtn div{
     background-color: #004535;
@@ -60,20 +57,17 @@ nav ul a {
     margin: 8px;
     transition: 1.5s;
 }
-
 /* 關閉按鈕 上線（左叉叉） */
 #menuBtn.closeBtn div:nth-of-type(1){
     /* background-color: red; */
     transform: translate(0,13px) rotate(405deg);
 }
-
 /* 按鈕 中線 */
 #menuBtn.closeBtn div:nth-of-type(2){
     /* background-color: red; */
     /* 縮放 */
     transform: scaleX(0);
 }
-
 /* 關閉按鈕 下線（右叉叉） */
 #menuBtn.closeBtn div:nth-of-type(3){
     /* background-color: red; */
@@ -90,28 +84,23 @@ nav ul a {
     /* 扣掉前面的logo寬 */
     width: calc(100% - 300px);
 }
-
-/* 主選單大框 */
-/* 子代選取器 */
-#mainNav>ul {
+/* 主選單 大框 */ 
+#mainNav>ul { /*子代選取器*/
     display: flex;
     /* border: 1px solid red; */
 }
-
-/* 主選單 每個主選單 */
+/* 每個主選單 */
 #mainNav>ul>li {
     /* border: 1px solid yellow; */
     flex: 1;
 }
-
-/* 主選單 每個主選單：滑入 下拉選單 */
+/* 每個主選單：滑入 下拉選單 */
 #mainNav>ul>li:hover ul {
     display: block;
     /* border: 1px solid rgb(201, 97, 18); */
 
 }
-
-/* 主選單 文字 */
+/* 主選單文字 */
 #mainNav ul li a {
     text-align: center;
     /* border: 1px solid rgb(201, 97, 18); */
@@ -119,7 +108,7 @@ nav ul a {
     color: rgb(0, 69, 53);
 }
 
-/* 主選單 每個主選單 文字 */
+/* 標題字 */
 #mainNav>ul>li>a {
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 700;
@@ -127,12 +116,14 @@ nav ul a {
     /* border: 1px solid rgb(201, 97, 18); */
 }
 
-/* 主選單 每個主選單 文字：滑入 發光  */
+/* 標題字：滑入 發光  */
 #mainNav>ul>li>a:hover {
-    background-image: radial-gradient(at center bottom, rgb(255, 255, 255,0.6),rgba(255, 255, 255, 0) 65%);
+    background-image: radial-gradient(at center bottom,
+                    rgb(255, 255, 255,0.6),
+                    rgba(255, 255, 255, 0) 65%);
 }
 
-
+/* 標題字：：前面 */
 #mainNav>ul>li>a::before{
     /* content: url(//images/mainIcon.png); */
     content: "";
