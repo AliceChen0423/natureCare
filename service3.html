@@ -15,53 +15,9 @@
     <style>
         /* 表格 */
         .ts1{
-            border: 5px solid rgb(58, 90, 58);
-            margin: 30px 5%;
-        }
-        /* 表格標題 */
-        .ts1 caption{
-            font-size: 24px;
-            margin-bottom: 3px;
-            letter-spacing: 0.15em;
-            font-size: 'Noto Serif TC',serif;
-            font-weight: 500;
-        }
-        /* 表格各列 */
-        /* nth-of-type(2n+3)從第3條開始每2個做一次設定 (n+3)從第3個開始 (-n+3)前三個 (odd)基數 (even)偶數
-        nth-last-of-type(-n+3) 最後3個 */
-        .ts1 tr:nth-of-type(odd){
-            background-color: rgb(169, 192, 117);
-        }
-        /* 項目列 */
-        .ts1 th{
-            /* border: 1px solid rgb(58, 90, 58); */
-            background-color: rgb(58, 90, 58);
-            color: white;
-            padding: 7px;
-            font-weight: 400;
-        }
-        /* 每一格 */
-        .ts1 td{
-            border: 1px solid rgb(58, 90, 58);
-            padding: 3px 6px;
-        }
-        /* 第一欄 */
-        .ts1 tr td:nth-of-type(1){
-            width: 90px;
-        }
-        /* 第三欄 */
-        .ts1 tr td:nth-of-type(3){
-            width: 75px;
-        }
-        /* 第四欄 */
-        .ts1 tr td:nth-of-type(4){
-            text-align: right;
-        }
-/* ---------------------第二種表格---------------------- */
-        .ts2{
-            margin: 30px 5%;
-            border-collapse: separate;
-            border-spacing: 2px 8px;
+        margin: 30px 5%;
+        border-collapse: separate;
+        border-spacing: 2px 8px;
         }
         /* 表格標題 */
         .ts1 caption{
@@ -71,14 +27,14 @@
             font-size: 'Noto Serif TC',serif;
             font-weight: 500;
         }        
-        .ts2 th{
+        .ts1 th{
             border: 1px solid green;
         }
-        .ts2 td{
+        .ts1 td{
             background-color: rgb(47, 89, 47);
             padding: 3px 12px;
         }
-        .ts2 tbody tr:nth-last-of-type(-n+3) td{
+        .ts1 tbody tr:nth-last-of-type(-n+3) td{
             background-color: rgb(143, 228, 172);
         }
         .ts1 tr td:nth-of-type(1){
@@ -89,15 +45,79 @@
         }
         .ts1 tr td:nth-of-type(4){
             text-align: right;
-        }       
-
+        }
+/* ---------------------第二種表格---------------------- */
+        /* 螢幕最大到600px */
         @media(max-width:600px){
+            /* 標題 */
+            .ts2 thead{
+                display: none; /*隱藏*/
+            }
             .ts2 tr{
-                display: block;
+                display: block; /*元素區塊*/
+                margin: 0 10px 30px 10px; /*邊界*/
+                background-color: rgba(255, 255, 255, 0.35); /*底色*/
+                padding: 10px; /*內距*/
             }
             .ts2 td{
-                display: block;;
+                display: block; /*元素區塊*/
+                border-bottom: 1px dashed green;  /*下底線*/
+                padding: 5px 5px 5px 50px; /*內距*/
+                position: relative; /*定位父曾*/
             }
+            .ts2 td::before{
+                content: attr(data-label); /*帶文字*/
+                position: absolute; /*定位子層*/
+                top: 5px; /*定位*/
+                left: 5px;
+            }
+        }
+        /* 螢幕最小到601px */
+        @media(min-width:601px){
+        /* 表格 */
+        .ts2{
+            border: 5px solid rgb(58, 90, 58);
+            margin: 30px 5%;
+        }
+        /* 表格標題 */
+        .ts2 caption{
+            font-size: 24px;
+            margin-bottom: 3px;
+            letter-spacing: 0.15em;
+            font-size: 'Noto Serif TC',serif;
+            font-weight: 500;
+        }
+        /* 表格各列 */
+        /* nth-of-type(2n+3)從第3條開始每2個做一次設定 (n+3)從第3個開始 (-n+3)前三個 (odd)基數 (even)偶數
+        nth-last-of-type(-n+3) 最後3個 */
+        .ts2 tr:nth-of-type(odd){
+            background-color: rgb(169, 192, 117);
+        }
+        /* 項目列 */
+        .ts2 th{
+            /* border: 1px solid rgb(58, 90, 58); */
+            background-color: rgb(58, 90, 58);
+            color: white;
+            padding: 7px;
+            font-weight: 400;
+        }
+        /* 每一格 */
+        .ts2 td{
+            border: 1px solid rgb(58, 90, 58);
+            padding: 3px 6px;
+        }
+        /* 第一欄 */
+        .ts2 tr td:nth-of-type(1){
+            width: 90px;
+        }
+        /* 第三欄 */
+        .ts2 tr td:nth-of-type(3){
+            width: 75px;
+        }
+        /* 第四欄 */
+        .ts2 tr td:nth-of-type(4){
+            text-align: right;
+        }
         }
     </style>
     <script>
@@ -137,76 +157,76 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>冷凝皂</td>
-                    <td>手工皂的基礎認識及實作，適合完全無基礎的初學者，課堂實作二款手工皂。</td>
-                    <td>2.5小時</td>
-                    <td>1100</td>
-                    <td>無</td>
-                    <td></td>
+                    <td data-label="課程">冷凝皂</td>
+                    <td data-label="說明">手工皂的基礎認識及實作，適合完全無基礎的初學者，課堂實作二款手工皂。</td>
+                    <td data-label="時間">2.5小時</td>
+                    <td data-label="費用">1100</td>
+                    <td data-label="限制">無</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>熱融皂</td>
-                    <td>製作時程短，馬上做出自己的手工皂，適合親子及?體教學。</td>
-                    <td>1.5小時</td>
-                    <td>800</td>
-                    <td>無</td>
-                    <td>可自備母乳</td>
+                    <td data-label="課程">熱融皂</td>
+                    <td data-label="說明">製作時程短，馬上做出自己的手工皂，適合親子及團體教學。</td>
+                    <td data-label="時間">1.5小時</td>
+                    <td data-label="費用">800</td>
+                    <td data-label="限制">無</td>
+                    <td data-label="備註">可自備母乳</td>
                 </tr>
                 <tr>
-                    <td>鮮奶皂</td>
-                    <td>以適合寶寶嬌嫩肌膚的甜杏仁油為基底，加入鮮奶製成鮮奶皂，可洗臉、沐浴。</td>
-                    <td>2.5小時</td>
-                    <td>1500</td>
-                    <td>可自備母乳</td>
-                    <td></td>
+                    <td data-label="課程">鮮奶皂</td>
+                    <td data-label="說明">以適合寶寶嬌嫩肌膚的甜杏仁油為基底，加入鮮奶製成鮮奶皂，可洗臉、沐浴。</td>
+                    <td data-label="時間">2.5小時</td>
+                    <td data-label="費用">1500</td>
+                    <td data-label="限制">可自備母乳</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>透明皂</td>
-                    <td>各種透明皂製作方式。</td>
-                    <td>2.5小時</td>
-                    <td>1200</td>
-                    <td>無</td>
-                    <td></td>
+                    <td data-label="課程">透明皂</td>
+                    <td data-label="說明">各種透明皂製作方式。</td>
+                    <td data-label="時間">2.5小時</td>
+                    <td data-label="費用">1200</td>
+                    <td data-label="限制">無</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>霜皂</td>
-                    <td>本課程教您製作洗感綿密的霜狀手工皂。。</td>
-                    <td>3小時</td>
-                    <td>1600</td>
-                    <td>具冷凝皂製作基礎</td>
-                    <td></td>
+                    <td data-label="課程">霜皂</td>
+                    <td data-label="說明">本課程教您製作洗感綿密的霜狀手工皂。</td>
+                    <td data-label="時間">3小時</td>
+                    <td data-label="費用">1600</td>
+                    <td data-label="限制">具冷凝皂製作基礎</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>渲染皂</td>
-                    <td>渲染手工皂是運用特殊調色手法，製作出與眾不同獨一無二的紋路手工皂。</td>
-                    <td>3小時</td>
-                    <td>1800</td>
-                    <td>具冷凝皂製作基礎</td>
-                    <td></td>
+                    <td data-label="課程">渲染皂</td>
+                    <td data-label="說明">渲染手工皂是運用特殊調色手法，製作出與眾不同獨一無二的紋路手工皂。</td>
+                    <td data-label="時間">3小時</td>
+                    <td data-label="費用">1800</td>
+                    <td data-label="限制">具冷凝皂製作基礎</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>乳油木果皂</td>
-                    <td>具有修護、調理、柔軟、滋潤肌膚以及增加髮絲光澤柔嫩的效用，亦可緩和及治療受日曬後的肌膚的手工皂。</td>
-                    <td>3小時</td>
-                    <td>2000</td>
-                    <td>具冷凝皂製作基礎</td>
-                    <td></td>
+                    <td data-label="課程">乳油木果皂</td>
+                    <td data-label="說明">具有修護、調理、柔軟、滋潤肌膚以及增加髮絲光澤柔嫩的效用，亦可緩和及治療受日曬後的肌膚的手工皂。</td>
+                    <td data-label="時間">3小時</td>
+                    <td data-label="費用">2000</td>
+                    <td data-label="限制">具冷凝皂製作基礎</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>滋潤保溼皂</td>
-                    <td>以保濕及滋潤肌膚為訴求的手工皂配方，可用於沐浴及洗臉。</td>
-                    <td>3小時</td>
-                    <td>2000</td>
-                    <td>具冷凝皂製作基礎</td>
-                    <td></td>
+                    <td data-label="課程">滋潤保溼皂</td>
+                    <td data-label="說明">以保濕及滋潤肌膚為訴求的手工皂配方，可用於沐浴及洗臉。</td>
+                    <td data-label="時間">3小時</td>
+                    <td data-label="費用">2000</td>
+                    <td data-label="限制">具冷凝皂製作基礎</td>
+                    <td data-label="備註"></td>
                 </tr>
                 <tr>
-                    <td>藝術手工皂</td>
-                    <td>透明皂製作，透明精油皂入門，透明不透明皂操作技巧，皂中?制作。</td>
-                    <td>3小時</td>
-                    <td>2500</td>
-                    <td>具冷凝皂、熱融皂製作基礎</td>
-                    <td></td>
+                    <td data-label="課程">藝術手工皂</td>
+                    <td data-label="說明">透明皂製作，透明精油皂入門，透明不透明皂操作技巧，皂中皂制作。</td>
+                    <td data-label="時間">3小時</td>
+                    <td data-label="費用">2500</td>
+                    <td data-label="限制">具冷凝皂、熱融皂製作基礎</td>
+                    <td data-label="備註"></td>
                 </tr>
             </tbody>
         </table>
