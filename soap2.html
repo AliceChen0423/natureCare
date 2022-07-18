@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="topBtn/topBtn.css">
     <!-- 燈箱效果 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
     <script src="https://kit.fontawesome.com/b3dff51945.js" crossorigin="anonymous"></script>
@@ -16,21 +17,11 @@
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/comm.js"></script>
     <script src="js/product.js"></script>
+    <script src="topBtn/topBtn.js"></script>
     <!-- 燈箱效果 -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
     <style>
-        #topBtn{
-            background-color: orange;
-            width: 60px;
-            height: 60px;
-            display: block;
-            text-align: center;
-            line-height: 60px;
-            border-radius: 30px;
-            color: white;
-            text-decoration: none;
-            box-shadow: 2px 2px 2px black;
-        }
+
     </style>
     <script>
         $(function(){
@@ -83,11 +74,16 @@
                     for(var i=0;i<product.length;i++){
                         item+='<div class="productItem"><div class="imgWrap"><a data-fancybox="g1" data-caption="'+product[i].name+'" href="imgSoap/'+product[i].photo+'"><img src="imgSoap/thum/'+product[i].photo+'"></a></div><h3>'+product[i].name+'</h3><p>'+product[1].desc+'</p><p>'+product[i].ingre+'</p></div>';
 
-                            $('#productList').html(item);
                     }
+
+                    $('#productList').html(item);
 
                 }
             })
+
+            // 在檔案"topBtn/topBtn.js"裡
+            setTopBtn();
+
 
         })
     </script>

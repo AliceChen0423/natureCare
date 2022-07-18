@@ -1,0 +1,19 @@
+#topBtn{
+    background-color: rgb(3, 78, 18); /*底色*/
+    width: 60px; /*背景寬*/
+    height: 60px; /*背景高*/
+    display: block; /*元素區塊*/
+    text-align: center; /*文字置中*/
+    font-size: 25px; /*文字大小*/
+    line-height: 60px; /*文字高度*/
+    border-radius: 30px; /*邊角度*/
+    color: white; /*字體色*/
+    text-decoration: none; /*超連結會有底線，去除底線*/
+    box-shadow: 2px 2px 2px black; /*陰影*/
+    /* 固定 */
+    /* position: fixed; */
+    /* bottom: 10px; */
+    position: absolute; /*定位區塊*/
+    right: 10px; /*距離畫面寬度*/
+    top: 600px; /*距離畫面高度*/
+}
