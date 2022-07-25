@@ -14,35 +14,19 @@
     <script src="js/comm.js"></script>
 
     <style>
-        #contact{
-            display: flex;
-            flex-wrap: wrap;
-            margin: 20px;
-        }
-        #contact fieldset{
-            flex: 1;
-            border: none;
-            border: 3px double rgb(18, 66, 18);
-            margin: 0 20px;
-        }
-        #contant fieldset legend{
-            background-color: rgb(18, 66, 18);
-            margin: 0 auto;
-            padding: 0 12px;
-            color: white;
-        }
-
-
         #contact p label:first-of-type{
             /* background-color: yellow; */
-            width: 90px;
+            width: 100px;
             display: inline-block;
-            /* 文字最後一句分散對齊 */
-            text-align-last: justify;  
-            /* color: red;           */
-            position: relative;/*定位：*/
+            /* text-align: right; */
+            /* text-align-last: justify;  針對最後一行做分散對齊
+            text-align: justify;  不會對齊最後一行 */
+            text-align-last: justify;
+            /* color: red; */
+            position: relative; /*定位：*/
             padding-right: 20px;
         }
+        
         /* 為了不要讓：佔一格文字影響排版，又不想花時間一個一個+class來完成控制 */
         /* 所以使用::after+postion定位來以css達到一次性控制：的效果 */
 
@@ -66,12 +50,19 @@
         但也會因此破壞版型,故使用resize: vertical使用者只
         能調整欄位高度 */
         #detail{
+            /* 只允許做垂直縮放 */
             resize: vertical;
             width: 75%;
         }
 
+
+
         /* 利用[]屬性選取器+開頭查詢功能找到for裡包含time的屬性 */
         /* 以達到控制checkbox間margin的效果 */
+        /* [type="checkbox"]+label{
+            margin-right: 20px;
+        }  */
+
         /* 也可用[for$="time"]結尾查詢 */
         /* 甚至用[for*=]包含查詢(只要有就能選取) */
         [for^="time"],
@@ -92,6 +83,9 @@
         }
         #contact fieldset{
             flex: 1;
+            border: none;
+            border-top: 3px double #025059;
+            padding: 20px;
         }
     
         #contact>p:last-of-type input{
@@ -207,7 +201,6 @@
     </main>
     <!-- div#footerlist>(div.footeritem>h2+p)*3 -->
     <footer>
-       
         </footer>
 </body>
 </html>
