@@ -1,0 +1,69 @@
+.cap, .ts1 caption, .ts3 caption {
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.ts1 {
+  border: 5px solid #3c6ea7;
+  width: 95%;
+  margin: 30px auto;
+}
+
+.ts1 tr:nth-of-type(odd) {
+  background-color: rgba(60, 110, 167, 0.5);
+}
+
+.ts1 tr:nth-of-type(even) {
+  background-color: rgba(60, 110, 167, 0.7);
+}
+
+.ts1 th {
+  border: 1px solid #3c6ea7;
+  border-color: #3c6ea7;
+  color: white;
+  padding: 5px 0px;
+}
+
+.ts1 td {
+  border: 1px solid #3c6ea7;
+  padding: 5px;
+}
+
+.ts1 td:nth-of-type(1) {
+  width: 120px;
+  text-align: center;
+}
+
+.ts1 td:nth-of-type(3) {
+  width: 70px;
+  text-align: center;
+}
+
+.ts1 td:nth-of-type(4) {
+  width: 50px;
+  text-align: right;
+}
+
+.ts3 {
+  width: 95%;
+  margin: 30px auto;
+  border-collapse: 3px;
+  border-spacing: 3px;
+}
+
+.ts3 tr:nth-of-type(-n+4) td {
+  background-color: rgba(60, 110, 167, 0.3);
+}
+
+.ts3 tr:nth-of-type(-n+5) td {
+  background-color: rgba(60, 110, 167, 0.6);
+}
+
+.ts3:hover td {
+  background-color: rgba(60, 110, 167, 0.6);
+  color: white;
+}
+
+.ts3 td {
+  padding: 8px;
+}

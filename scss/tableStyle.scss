@@ -1,0 +1,99 @@
+// $是變數
+// 利用這個方式可以同時更改所以有帶有$tableColor設定的顏色
+// 要寫在前面
+$tableColor:#3c6ea7;
+
+.cap {
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+
+.ts1 {
+    border: 5px solid $tableColor;
+    width: 95%;
+    margin: 30px auto;
+
+    caption {
+        // 擴充(繼承）樣式
+        @extend .cap;
+    }
+
+    tr {
+        &:nth-of-type(odd) {
+            background-color: rgba($tableColor, 0.5);
+        }
+
+        &:nth-of-type(even) {
+            background-color: rgba($tableColor, 0.7);
+        }
+    }
+
+    th {
+        border: 1px solid $tableColor;
+        border-color: $tableColor;
+        color: white;
+        padding: 5px 0px;
+    }
+
+    td {
+        border: 1px solid $tableColor;
+        padding: 5px;
+
+        // &代父層名稱
+        &:nth-of-type(1) {
+            width: 120px;
+            text-align: center;
+        }
+
+        &:nth-of-type(3) {
+            width: 70px;
+            text-align: center;
+        }
+
+        &:nth-of-type(4) {
+            width: 50px;
+            text-align: right;
+        }
+
+    }
+}
+
+.ts3 {
+    width: 95%;
+    margin: 30px auto;
+    border-collapse: 3px;
+    border-spacing: 3px;
+
+
+    caption {
+            @extend .cap;
+    }
+
+
+
+    tr {
+        &:nth-of-type(-n+4) {
+            td {
+                background-color: rgba($tableColor, 0.3);
+            }
+        }
+
+        &:nth-of-type(-n+5) {
+            td {
+                background-color: rgba($tableColor, 0.6);
+            }
+        }
+    }
+
+    &:hover {
+        td {
+            background-color: rgba($tableColor, 0.6);
+            color: white;
+        }
+    }
+
+    td {
+        padding: 8px;
+    }
+}
