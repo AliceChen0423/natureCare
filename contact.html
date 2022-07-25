@@ -12,6 +12,36 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/comm.js"></script>
+    <style>
+        #contant p label:first-of-type{
+            display:inline-block;
+            text-align-last: justify;
+            width: 100px;
+            position: relative;
+            padding-right: 20px;
+        }
+        #contant p label:first-of-type::after{
+            content: ':';
+            position: absolute;
+            top:0;
+            right: 0;
+            margin-right: 5px;
+        }
+        /* [屬性選取器] */
+        #contant [for="detail"]{
+            vertical-align: top;
+        }
+        #detail{
+            resize: vertical;
+            width: 80%;
+        }
+        [id^='time']+label{
+            margin-right: 20px;
+        }
+        [for$='male']{
+            margin-right: 10px;
+        }
+    </style>
     <script>
         $(function(){
             // 頁尾標籤名 load載入外部檔案 放頁尾檔名
@@ -35,7 +65,57 @@
         <img src="images/banner.jpg" alt="banner">
     </div>
     <main>
+        <form id="contant" action="">
+            <p>
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name">
+            </p>
+            <p>
+                <label for="sex">性別</label>
+                <!-- 相同name名稱才會視為同一個選項 做單選 -->
+                <input type="radio" id="male" name="sex" value="男">
+                <label for="male">男</label>
+                <input type="radio" id="female" name="sex" value="女">
+                <label for="female">女</label>
 
+            </p>
+            <p>
+                <label for="mobile">行動電話</label>
+                <!-- type="tel"在手機板會顯示數字鍵盤 -->
+                <input type="tel" id="mobile" name="mobile" placeholder="09XXXXXXXX">
+            </p>
+            <p>
+                <label for="email">電子郵件</label>
+                <!-- type="email"在手機板會顯示有@跟.com的鍵盤 -->
+                <input type="email" id="email" name="email" placeholder="使用奇摩信箱可能會收不到信">
+            </p> 
+<p>
+                <label for="time">聯絡時間</label>
+                <input type="checkbox" id="time1" name="time1" value="9-12">
+                <label for="time1">09:00 - 12:00</label>
+                <input type="checkbox" id="time2" name="time2" value="13-16">
+                <label for="time2">13:00 - 16:00</label>
+                <input type="checkbox" id="time3" name="time3" value="17-20">
+                <label for="time3">17:00 - 20:00</label>
+            </p>
+            <p>
+                <label for="">詢問事項</label>
+                <select name="command" id="command" >
+                    <option value="---">---請選取---</option>
+                    <option value="產品詢問">產品詢問</option>
+                    <option value="售後服務">售後服務</option>
+                    <option value="other">其他</option>
+                </select>
+            </p>
+            <p>
+                <label for="detail">詳細內容</label>
+                <textarea name="detail" id="detail" cols="30" rows="10" placeholder="請輸入詳細訊息"></textarea>
+            </p>
+            <p>
+                <input type="submit" name="submit" id="submit" value="送出">
+                <input type="reset" name="reset" id="reset" value="清除">
+            </p>
+        </form>
     </main>
     <footer>
         

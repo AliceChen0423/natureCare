@@ -1,0 +1,18 @@
+body {
+  background-color: #f5f5f5;
+  -webkit-column-gap: red;
+          column-gap: red;
+}
+
+#contact {
+  color: red;
+}
+
+#contact p {
+  color: blue;
+}
+
+#contact p a {
+  text-decoration: none;
+}
+/*# sourceMappingURL=test.css.map */
