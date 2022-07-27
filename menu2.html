@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zn-hant-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu2</title>
+    <script src="https://kit.fontawesome.com/b3dff51945.js" crossorigin="anonymous"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        
+    }
+    #menu {
+        background-color: rgb(63, 63, 63);
+        position: relative;
+    }
+    
+    #menu ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 50px 25px;
+        display: flex;
+    }
+
+    #menu ul li{
+        flex:1;
+        position: relative;
+    }
+    #menu ul a{
+        text-decoration: none;
+        color: white;
+        /* display: block; */
+        text-align: center;
+        /* border: 1px solid red; */
+    }
+
+    #menuBtn{
+        position: absolute;
+        right: 10px;
+        bottom: -35px;
+        text-decoration: none;
+        background-color: rgb(29, 8, 107);
+        display: block;
+        width: 100px;
+        height: 35px;
+        line-height: 35px;
+        /* border: 1px solid red; */
+        text-align: center;
+        color: white;
+        border-radius: 0 0 6px 6px;
+    }
+</style>
+<script>
+    $(function(){
+        $('#menu').css({'top':-$('#menu').outerHeight()})
+        var isOpen=false;
+
+        $('#menuBtn').click(function(){
+            // isOpen- - ->true
+
+            if(isOpen){
+                // 關起來
+                $('#menu').stop().animate({'top': -$('#menu').outerHeight()},1000);
+                $(this).html('Menu').stop().animate({'bottom': -$(this).outerHeight()},1000)
+                .css({'border-radius':'0 0 6px 6px'});
+                isOpen=false;
+            }else{
+                // isOpen- - ->false
+                // 打開
+                $('#menu').stop().animate({'top':0},1000);
+                $(this).html('Close').stop().animate({'bottom':10},1000)
+                .css({'border-radius':'6px'});
+
+                // top正值 從下往上出來，負值 從上往下出來
+                $('#menu ul li').stop().css({'opacity':0,'top':200}).each(function(i){
+                    $(this).delay(1000*(i+1)).animate({'opacity':1,'top':0},1000);
+
+                    // (0+1)*500
+                    // (1+1)*500
+                    // (2+1)*500
+                    // (3+1)*500
+                });
+                // each逐一處理
+                // this正在處理的（會代表不同的對象）
+                isOpen=true;
+            }
+        })
+    })
+</script>
+
+<body>
+    <nav id="menu">
+        <ul>
+            <li><a href="#">Menu1</a></li>
+            <li><a href="#">Menu2</a></li>
+            <li><a href="#">Menu3</a></li>
+            <li><a href="#">Menu4</a></li>
+            <li><a href="#">Menu5</a></li>
+        </ul>
+        <a id="menuBtn" href="#">Menu</a>
+        </div>
+    </nav>
+</body>
+
+</html>
