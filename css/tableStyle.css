@@ -4,7 +4,7 @@
 }
 
 .eBase, .ts1, .ts3 {
-  width: 95%;
+  width: 90%;
   margin: 30px auto;
 }
 
@@ -12,12 +12,17 @@
   border: 5px solid #3c6ea7;
 }
 
-.ts1 tr:nth-of-type(odd) {
+.ts1 tr:nth-of-type(odd) td {
+  background-color: rgba(60, 110, 167, 0.325);
+}
+
+.ts1 tr:nth-of-type(even) td {
   background-color: rgba(60, 110, 167, 0.5);
 }
 
-.ts1 tr:nth-of-type(even) {
-  background-color: rgba(60, 110, 167, 0.7);
+.ts1 tr:hover td {
+  color: #fff;
+  background-color: #3c6ea7;
 }
 
 .ts1 th {

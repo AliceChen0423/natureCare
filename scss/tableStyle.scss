@@ -10,7 +10,7 @@ $tableColor:#3c6ea7;
 }
 
 .eBase {
-    width: 95%;
+    width: 90%;
     margin: 30px auto;
 }
 
@@ -33,6 +33,39 @@ $tableColor:#3c6ea7;
     }
 }
 
+// @mixin可以帶參數 $alpha:預設值（如果以下沒給就是帶0.5)
+@mixin zTable($fontColor, $bgColor,$alpha:05) {
+    tr {
+        &:nth-of-type(odd) {
+            td {
+                background-color: rgba($bgColor,$alpha*0.65);
+            }
+        }
+
+        &:nth-of-type(even) {
+            td {
+                background-color: rgba($bgColor,$alpha);
+            }
+        }
+        
+        &:hover {
+            td {
+                color: $fontColor;
+                @if $alpha*2>0.8{
+                    $alpha:0.8;
+                }@else{
+                    $alpha:$alpha*2;
+                }
+                // @if 條件{
+
+                // }@else if 條件{
+
+                // }
+                background-color: rgba($bgColor,$alpha*2);
+            }
+        }
+    }
+}
 
 .ts1 {
     border: 5px solid $tableColor;
@@ -40,19 +73,22 @@ $tableColor:#3c6ea7;
     @extend .eBase;
 
     caption {
+        // 擴充(繼承）樣式
         @extend %cap;
-                // 擴充(繼承）樣式
     }
 
-    tr {
-        &:nth-of-type(odd) {
-            background-color: rgba($tableColor, 0.5);
-        }
+    // 根據上面帶的$alpha可以直接給0.7深淺
+    @include zTable(#fff, $tableColor,0.5);
 
-        &:nth-of-type(even) {
-            background-color: rgba($tableColor, 0.7);
-        }
-    }
+    // tr {
+    //     &:nth-of-type(odd) {
+    //         background-color: rgba($tableColor, 0.5);
+    //     }
+
+    //     &:nth-of-type(even) {
+    //         background-color: rgba($tableColor, 0.7);
+    //     }
+    // }
 
     th {
         border: 1px solid $tableColor;
@@ -94,6 +130,7 @@ $tableColor:#3c6ea7;
                 background-color: rgba($tableColor, 0.6);
             }
         }
+
         &:hover {
             td {
                 background-color: rgba($tableColor, 1);
