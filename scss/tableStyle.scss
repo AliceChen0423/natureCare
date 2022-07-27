@@ -3,20 +3,45 @@
 // 要寫在前面
 $tableColor:#3c6ea7;
 
-.cap {
-    font-size: 12px;
+// .改％讓它不會互相干擾
+%cap {
+    font-size: 24px;
     letter-spacing: 5px;
+}
+
+.eBase {
+    width: 95%;
+    margin: 30px auto;
+}
+
+@mixin tdw {
+
+    // &代父層名稱
+    &:nth-of-type(1) {
+        width: 120px;
+        text-align: center;
+    }
+
+    &:nth-of-type(3) {
+        width: 70px;
+        text-align: center;
+    }
+
+    &:nth-of-type(4) {
+        width: 50px;
+        text-align: right;
+    }
 }
 
 
 .ts1 {
     border: 5px solid $tableColor;
-    width: 95%;
-    margin: 30px auto;
+
+    @extend .eBase;
 
     caption {
-        // 擴充(繼承）樣式
-        @extend .cap;
+        @extend %cap;
+                // 擴充(繼承）樣式
     }
 
     tr {
@@ -39,35 +64,20 @@ $tableColor:#3c6ea7;
     td {
         border: 1px solid $tableColor;
         padding: 5px;
+        @include tdw();
 
-        // &代父層名稱
-        &:nth-of-type(1) {
-            width: 120px;
-            text-align: center;
-        }
-
-        &:nth-of-type(3) {
-            width: 70px;
-            text-align: center;
-        }
-
-        &:nth-of-type(4) {
-            width: 50px;
-            text-align: right;
-        }
 
     }
 }
 
 .ts3 {
-    width: 95%;
-    margin: 30px auto;
-    border-collapse: 3px;
+    @extend .eBase;
+    border-collapse: separate;
     border-spacing: 3px;
 
 
     caption {
-            @extend .cap;
+        @extend %cap;
     }
 
 
@@ -84,16 +94,18 @@ $tableColor:#3c6ea7;
                 background-color: rgba($tableColor, 0.6);
             }
         }
-    }
-
-    &:hover {
-        td {
-            background-color: rgba($tableColor, 0.6);
-            color: white;
+        &:hover {
+            td {
+                background-color: rgba($tableColor, 1);
+                color: white;
+            }
         }
     }
 
+
+
     td {
         padding: 8px;
+        @include tdw();
     }
 }

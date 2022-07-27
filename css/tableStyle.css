@@ -1,12 +1,15 @@
-.cap, .ts1 caption, .ts3 caption {
-  font-size: 12px;
+.ts1 caption, .ts3 caption {
+  font-size: 24px;
   letter-spacing: 5px;
+}
+
+.eBase, .ts1, .ts3 {
+  width: 95%;
+  margin: 30px auto;
 }
 
 .ts1 {
   border: 5px solid #3c6ea7;
-  width: 95%;
-  margin: 30px auto;
 }
 
 .ts1 tr:nth-of-type(odd) {
@@ -45,9 +48,7 @@
 }
 
 .ts3 {
-  width: 95%;
-  margin: 30px auto;
-  border-collapse: 3px;
+  border-collapse: separate;
   border-spacing: 3px;
 }
 
@@ -59,11 +60,26 @@
   background-color: rgba(60, 110, 167, 0.6);
 }
 
-.ts3:hover td {
-  background-color: rgba(60, 110, 167, 0.6);
+.ts3 tr:hover td {
+  background-color: #3c6ea7;
   color: white;
 }
 
 .ts3 td {
   padding: 8px;
+}
+
+.ts3 td:nth-of-type(1) {
+  width: 120px;
+  text-align: center;
+}
+
+.ts3 td:nth-of-type(3) {
+  width: 70px;
+  text-align: center;
+}
+
+.ts3 td:nth-of-type(4) {
+  width: 50px;
+  text-align: right;
 }
