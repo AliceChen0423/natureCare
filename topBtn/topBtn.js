@@ -21,7 +21,7 @@ function setTopBtn(){
         // 抓到視窗高度、捲出去的部分、按鈕高度
         var scrollOut=$(window).scrollTop();
         var winH=$(window).height();
-        var binH=$('#topBtn').height();
+        var btnH=$('#topBtn').height();
         var moveTo=winH+scrollOut-btnH-20;
         $('#topBtn').stop().animate({'top':moveTo});
     })
